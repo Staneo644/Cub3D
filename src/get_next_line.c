@@ -86,10 +86,10 @@ static int	ft_get_read(int fd, char **line, char **backup, int o)
 char	*get_next_line(int fd)
 {
 	char		*line;
-	char static	*backup[OPEN_MAX] = {0};
+	static char	*backup[65536] = {0};
 
 	line = NULL;
-	if (fd >= 0 && fd < OPEN_MAX && BUFFER_SIZE >= 1
+	if (fd >= 0 && fd < 65536 && BUFFER_SIZE >= 1
 		&& !ft_get_read(fd, &line, &(backup[fd]), 0))
 	{
 		free (line);

@@ -34,14 +34,14 @@ void	ft_write_map(t_map *map)
 
 int	ft_putc(char a)
 {
-	write(1, &a, 1);
-	return (0);
+	int i = write(1, &a, 1);
+	return (i - i);
 }
 
 int	ft_put(char *str)
 {
-	write(2, str, ft_strlen(str));
-	return (0);
+	int i = write(2, str, ft_strlen(str));
+	return (i - i);
 }
 
 int	ft_putnb(int nb)

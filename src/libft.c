@@ -56,9 +56,9 @@ int	ft_free(void *str)
 
 int	ft_error(char *str)
 {
-	write(2, "Error\n", 7);
-	write(2, str, ft_strlen(str));
-	return (0);
+	int i = write(2, "Error\n", 7);
+	i += write(2, str, ft_strlen(str));
+	return (i - i);
 }
 
 void	*ft_malloc(size_t x)
